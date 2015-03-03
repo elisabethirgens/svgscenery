@@ -22,4 +22,4 @@ var calc = (function() {
   return {
     getSunHeight: getSunHeight
   };
-)();
+})();
