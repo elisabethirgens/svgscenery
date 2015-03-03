@@ -37,5 +37,8 @@ function insertcloud(parentID) {
 }
 
 insertsun("sunContainer");
-insertcloud("clouds");
-insertcloud("clouds");
+
+var numClouds = randy.randInt(1, 4);
+for (var i=0; i < numClouds; i++) {
+  insertcloud("clouds");
+}
