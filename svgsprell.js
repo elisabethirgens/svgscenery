@@ -26,8 +26,8 @@ function insertcloud(parentID) {
   var y = randy.randInt(0, 400);
   var translation = "translate(" + x + " " + y + ")";
 
-  var scaleX = randy.randInt(0.9, 1.1);
-  var scaleY = randy.randInt(0.9, 1.1);
+  var scaleX = randy.randInt(1.0, 1.2);
+  var scaleY = randy.randInt(0.8, 1.0);
   var scale = "scale(" + scaleX + " " + scaleY + ")";
 
   cloud.setAttribute("transform", translation + " " + scale);
