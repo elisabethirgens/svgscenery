@@ -10,19 +10,19 @@ function insertsun(parentID) {
 
 insertsun("sunContainer");
 
+function createCircle(cx, cy, r) {
+  var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  shape.setAttribute("cx", cx);
+  shape.setAttribute("cy", cy);
+  shape.setAttribute("r", r);
+  return shape;
+}
+  
 function insertcloud1(parentID) {
   var cloud = document.createElementNS("http://www.w3.org/2000/svg", "g");
   cloud.setAttribute("fill", "white");
   cloud.setAttribute("transform", "translate(90 100)");
 
-  function createCircle(cx, cy, r) {
-    var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    shape.setAttribute("cx", cx);
-    shape.setAttribute("cy", cy);
-    shape.setAttribute("r", r);
-    return shape;
-  }
-  
   cloud.appendChild(createCircle(0, 0, 30));
   cloud.appendChild(createCircle(30, 50, 40));
   cloud.appendChild(createCircle(60, 10, 50));
