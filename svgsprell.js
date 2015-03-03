@@ -15,29 +15,18 @@ function insertcloud1(parentID) {
   cloud.setAttribute("fill", "white");
   cloud.setAttribute("transform", "translate(90 100)");
 
-  var shape1 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  shape1.setAttribute("cx", 0);
-  shape1.setAttribute("cy", 0);
-  shape1.setAttribute("r", 30);
-  cloud.appendChild(shape1);
-
-  var shape2 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  shape2.setAttribute("cx", 30);
-  shape2.setAttribute("cy", 50);
-  shape2.setAttribute("r", 40);
-  cloud.appendChild(shape2);
-
-  var shape3 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  shape3.setAttribute("cx", 60);
-  shape3.setAttribute("cy", 10);
-  shape3.setAttribute("r", 50);
-  cloud.appendChild(shape3);
-
-  var shape4 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  shape4.setAttribute("cx", 120);
-  shape4.setAttribute("cy", 20);
-  shape4.setAttribute("r", 30);
-  cloud.appendChild(shape4);
+  function createCircle(cx, cy, r) {
+    var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    shape.setAttribute("cx", cx);
+    shape.setAttribute("cy", cy);
+    shape.setAttribute("r", r);
+    return shape;
+  }
+  
+  cloud.appendChild(createCircle(0, 0, 30));
+  cloud.appendChild(createCircle(30, 50, 40));
+  cloud.appendChild(createCircle(60, 10, 50));
+  cloud.appendChild(createCircle(120, 20, 30));
 
   var cloudContainer = document.getElementById(parentID);
   cloudContainer.appendChild(cloud);
