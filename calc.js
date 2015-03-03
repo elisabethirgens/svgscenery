@@ -1,8 +1,9 @@
 var calc = (function() {
+  var sunriseTime = 7;
+  
   function getSunHeight(hour) {
     var horizonY = 500;
     var topY = 100;
-    var sunriseTime = 7;
     
     if (!hour) {
       var d = new Date();
@@ -18,8 +19,23 @@ var calc = (function() {
     
     return posY;
   }
+
+  function getSunX(hour) {
+    if (!hour) {
+      var d = new Date();
+      hour = d.getHours() + d.getMinutes() / 60;
+    }
+
+    var sunriseX = 100;
+    var sunsetX = 900;
+    var normalizedHour = (((hour - sunriseTime) + 24) % 24) / 12;
+    
+    console.log(normalizedHour);
+    return sunriseX + (sunsetX - sunriseX) * normalizedHour;
+  }
   
   return {
-    getSunHeight: getSunHeight
+    getSunHeight: getSunHeight,
+    getSunX: getSunX
   };
 })();
