@@ -19,7 +19,9 @@ function createCircle(cx, cy, r) {
 function insertcloud1(parentID) {
   var cloud = document.createElementNS("http://www.w3.org/2000/svg", "g");
   cloud.setAttribute("fill", "white");
-  cloud.setAttribute("transform", "translate(90 100)");
+  var x = randy.randInt(0, 950);
+  var y = randy.randInt(0, 200);
+  cloud.setAttribute("transform", "translate(" + x + " " + y + ")");
 
   cloud.appendChild(createCircle(0, 0, 30));
   cloud.appendChild(createCircle(30, 50, 40));
@@ -33,7 +35,9 @@ function insertcloud1(parentID) {
 function insertcloud2(parentID) {
   var cloud = document.createElementNS("http://www.w3.org/2000/svg", "g");
   cloud.setAttribute("fill", "white");
-  cloud.setAttribute("transform", "translate(490 200)");
+  var x = randy.randInt(80, 1000);
+  var y = randy.randInt(200, 350);
+  cloud.setAttribute("transform", "translate(" + x + " " + y + ")");
 
   cloud.appendChild(createCircle(0, 0, 60));
   cloud.appendChild(createCircle(-80, -30, 30));
