@@ -21,6 +21,10 @@ function createCircle(cx, cy, r) {
 function insertcloud(parentID) {
   var cloud = document.createElementNS("http://www.w3.org/2000/svg", "g");
   cloud.setAttribute("fill", "white");
+  
+  var value = randy.randInt(0.7, 1.0);
+  cloud.setAttribute("opacity", value);
+  
   var x = randy.randInt(-200, 900);
   var y = randy.randInt(-100, 350);
   cloud.setAttribute("transform", "translate(" + x + " " + y + ")");
