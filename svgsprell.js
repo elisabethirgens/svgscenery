@@ -8,8 +8,6 @@ function insertsun(parentID) {
   sunContainer.appendChild(shape);
 }
 
-insertsun("sunContainer");
-
 function createCircle(cx, cy, r) {
   var shape = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   shape.setAttribute("cx", cx);
@@ -46,5 +44,6 @@ function insertcloud2(parentID) {
   cloudContainer.appendChild(cloud);
 }
 
+insertsun("sunContainer");
 insertcloud1("clouds");
 insertcloud2("clouds");
