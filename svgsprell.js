@@ -3,5 +3,5 @@ shape.setAttribute("cx", 800);
 shape.setAttribute("cy", calc.getSunHeight());
 shape.setAttribute("r", 50);
 shape.setAttribute("fill", "orange");
-var popcorn = document.getElementById("popcorn");
-popcorn.appendChild(shape);
+var sunContainer = document.getElementById("sunContainer");
+sunContainer.appendChild(shape);
