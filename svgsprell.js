@@ -32,4 +32,19 @@ function insertcloud1(parentID) {
   cloudContainer.appendChild(cloud);
 }
 
+function insertcloud2(parentID) {
+  var cloud = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  cloud.setAttribute("fill", "white");
+  cloud.setAttribute("transform", "translate(490 200)");
+
+  cloud.appendChild(createCircle(0, 0, 60));
+  cloud.appendChild(createCircle(-80, -30, 30));
+  cloud.appendChild(createCircle(-70, 20, 40));
+  cloud.appendChild(createCircle(-130, -20, 50));
+
+  var cloudContainer = document.getElementById(parentID);
+  cloudContainer.appendChild(cloud);
+}
+
 insertcloud1("clouds");
+insertcloud2("clouds");
