@@ -20,17 +20,20 @@ function createCircle(cx, cy, r) {
 
 function insertcloud(parentID) {
   var cloud = document.createElementNS("http://www.w3.org/2000/svg", "g");
-  cloud.setAttribute("fill", "white");
 
-  var value = randy.randInt(0.7, 1.0);
+  var colorValue = Math.floor(randy.triangular(200, 256, 250));
+  var color = "rgb("+colorValue+", "+colorValue+", "+colorValue+")";
+  cloud.setAttribute("fill", color);
+
+  var value = randy.randInt(0.9, 0.95);
   cloud.setAttribute("opacity", value);
 
   var x = randy.randInt(0, 1000);
   var y = randy.randInt(0, 400);
   var translation = "translate(" + x + " " + y + ")";
 
-  var scaleX = randy.randInt(1.0, 1.2);
-  var scaleY = randy.randInt(0.8, 1.0);
+  var scaleX = randy.randInt(1.0, 1.5);
+  var scaleY = randy.randInt(0.6, 1.0);
   var scale = "scale(" + scaleX + " " + scaleY + ")";
 
   cloud.setAttribute("transform", translation + " " + scale);
@@ -48,7 +51,7 @@ function insertcloud(parentID) {
 
 insertsun("sunContainer");
 
-var numClouds = randy.randInt(1, 4);
+var numClouds = randy.triangular(1, 30, 10);
 for (var i=0; i < numClouds; i++) {
   insertcloud("clouds");
 }
